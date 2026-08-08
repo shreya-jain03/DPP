@@ -1,7 +1,7 @@
-[
-    {
-        "name:"shreya jain",
-        "mobile": "1234567890",
-        
-    }
-]
+{
+    "name": "shreya jain",
+    "email": "shreya@gmail.com",
+    "mobile": "9876543210",
+    "branch": "CSE",
+    "password": "123456"
+}

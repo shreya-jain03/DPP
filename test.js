@@ -1,37 +1,97 @@
-const fs = require("fs");
-let passed = true;
-console.log("Registration Test\n")
+const fs=require('fs');
+const student = JSON.parse(
+    fs.readFileSync("student.json", "utf8")
+);
+let passed= true;
+console.log("Registration testing");
+//TC-01 check html file exist
+if(fs.existsSync("index.html")){
+    console.log("index.html file exists");}
+else{
+    console.log("index.html file does not exist");
+    passed=false;
 
-if(fs.existsSync("index.html")) {
-   console.log("TC-01 : index.html exists:PASS");
+}
+//TC-02 check style file exist
+if(fs.existsSync("index.css")){
+    console.log("index.css file exists");}
+else{
+    console.log("index.css file does not exist");
+    passed=false;
+
+}
+
+//TC-03 check script file exist
+if(fs.existsSync("index.js")){
+    console.log("index.js file exists");}
+else{
+    console.log("index.js file does not exist");
+    passed=false;
+
+}
+
+//TC-04 check student file exist
+if(fs.existsSync("student.json")){
+    console.log("student.json file exists");}
+else{
+    console.log("student.json file does not exist");
+    passed=false;
+
+}
+//TC_05 name validation
+if(student.name.trim()!== "" ){
+    console.log(" Name Validation pass");
 }
 else{
-        console.log("TC-01 : index.html exists:FAIL");
-        passed=false;
-     }
-if(fs.existsSync("css/style.css")) {
-        console.log("TC-02 :style.css exists:PASS");
-     }
-else{
-    console.log("TC-02 : style.css exists:FAIL");
+    console.log("Name Validation fail");
     passed=false;
 }
-if(fs.existsSync("script.js")) {
-    console.log("TC-03 :script.jss exists:PASS");
- }
-else{
-console.log("TC-03 : script.js exists:FAIL");
-passed=false;
+
+//TC-06Email validation 
+if(student.email.includes("@") ){
+    console.log(" Email Validation pass");
 }
-if(fs.existsSync("data/students.json")) {
-    console.log("TC-4 : students.json exists:PASS");
- }
 else{
-console.log("TC-04 : students.json exists:FAIL");
-passed=false;
+    console.log("Email Validation fail");
+    passed=false;
 }
-const students = JSON.parse(
-    fs.readFileSync("data/students.json")
-);
-const student=student[0];
+
+//TC=07 mobile validation
+if(student.mobile.length=== 10 ){
+    console.log(" Mobile Validation pass");
+}
+else{
+    console.log("Mobile Validation fail");
+    passed=false;
+}
+
+// TC-Branch validation
+if(student.branch.trim()!== "" ){
+    console.log(" Branch Validation pass");
+}
+else{
+    console.log("Branch Validation fail");
+    passed=false;
+}
+
+
+//TC=09 Password validation 
+if(student.password.length>=6 ){
+    console.log(" Password Validation pass");
+}
+else{
+    console.log("Password Validation fail");
+    passed=false;
+}
+
+//Tc=10 Registration success
+if(passed){
+    console.log(" Registration success");
+}
+else{
+    console.log("Registration failed");
+    //process.exit();
+    
+}
+
 
