@@ -1,1 +1,25 @@
-[]
+{
+  "students": [
+    {
+      "name": "Tashu Gupta",
+      "email": "tashu@example.com",
+      "mobile": "9876543210",
+      "password": "tashu123",
+      "branch": "CSE"
+    },
+    {
+      "name": "sherya",
+      "email": "shreya@gmail.com",
+      "mobile": "3456782345",
+      "password": "123456",
+      "branch": "CSE"
+    },
+    {
+      "name": "leo jain",
+      "email": "leo28@gmail.com",
+      "mobile": "8824452913",
+      "password": "282828202",
+      "branch": "CSE"
+    }
+  ]
+}
